@@ -12,6 +12,10 @@
 <body>
   <div id="app"></div>
   <script>
+	//pwa离线模式
+    if (typeof navigator.serviceWorker !== 'undefined') {
+      navigator.serviceWorker.register('sw.js')
+    }
     window.$docsify = {
       name: 'JavaGuide',
       repo: 'https://github.com/Gahon1995/JavaGuide',
@@ -29,12 +33,8 @@
         depth: 3,
         },
 	  
-    };
-  //PWA 模式代码开始 
-  if (typeof navigator.serviceWorker !== 'undefined') { 
-      navigator.serviceWorker.register('sw.js') 
-  };
-  //PWA 模式代码结束 
+    }
+	  
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <!--Java代码高亮-->

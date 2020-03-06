@@ -8,11 +8,6 @@
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css">
   <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/prism.css">
-  <script>
-    if (typeof navigator.serviceWorker !== 'undefined') {
-      navigator.serviceWorker.register('sw.js')
-    }
-</script>
 </head>
 <body>
   <div id="app"></div>
@@ -20,7 +15,7 @@
     window.$docsify = {
       name: 'JavaGuide',
       repo: 'https://github.com/Snailclimb/JavaGuide',
-	  maxLevel: 3,//最大支持渲染的标题层级
+	  maxLevel: 999,//最大支持渲染的标题层级
 	  coverpage: true,//封面,_coverpage.md
 	  auto2top: true,//切换页面后是否自动跳转到页面顶部
 	  //ga: 'UA-138586553-1',
@@ -35,6 +30,11 @@
         },
 	  
     }
+  //PWA 模式代码开始 
+  if (typeof navigator.serviceWorker !== 'undefined') { 
+      navigator.serviceWorker.register('sw.js') 
+  } 
+  //PWA 模式代码结束 
   </script>
   <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
   <!--Java代码高亮-->
